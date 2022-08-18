@@ -1,6 +1,6 @@
 ﻿using Quiz;
 
-Cat cat = new Cat();
+IAnimal cat = new Lion();
 Console.WriteLine($"I am a {cat.GetName()} and I live in the {cat.GetHabitat()}.");
 
 Console.ForegroundColor = ConsoleColor.Green;
