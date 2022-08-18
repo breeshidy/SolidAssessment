@@ -1,6 +1,6 @@
 ﻿namespace Quiz
 {
-    public class OrangeBasket
+    public class OrangeBasket : IOrangeBasket
     {
         private readonly IDictionary<int, Orange> _oranges;
 
@@ -22,19 +22,6 @@
         public void Remove(Orange orange)
         {
             _oranges.Remove(orange.Id);
-        }
-
-        //What do you think about this method ?
-        //Should this be a responsibility of this Basket Class ?
-        public double GetTotalCost()
-        {
-            double cost = 0;
-            foreach(var orange in _oranges)
-            {
-                cost += orange.Value.Cost;
-            }
-
-            return cost;
         }
     }
 }
