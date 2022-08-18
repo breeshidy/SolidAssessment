@@ -1,9 +1,7 @@
 ﻿namespace Quiz
 {
-    public interface IEmployee
+    public interface IEmployee : IBaseEmployee
     {
-        public double GetSalary();
-
         public string ReportsTo();
     }
 }

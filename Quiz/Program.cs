@@ -16,9 +16,10 @@ Console.WriteLine("                                                             
 //what happens when you try to run these commented lines for the CEO ?
 //IEmployee CEO = new CEO();
 //Console.WriteLine($"As a CEO, I get an annual salary of ${CEO.GetSalary()} and I report to {CEO.ReportsTo()}");
+IBaseEmployee CEO = new CEO();
 
-//Console.ForegroundColor = ConsoleColor.Green;
-//Console.WriteLine("                                                                                         ");
+Console.ForegroundColor = ConsoleColor.Green;
+Console.WriteLine("                                                                                         ");
 
 Console.ForegroundColor = ConsoleColor.Red;
 Console.WriteLine("                                                                                         ");
