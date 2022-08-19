@@ -2,8 +2,8 @@
 {
     public class Cat
     {
-        public virtual string GetName() => nameof(Cat);
+        public string GetName() => nameof(Cat);
 
-        public virtual string GetHabitat() => "Home";
+        public string GetHabitat() => "Home";
     }
 }
