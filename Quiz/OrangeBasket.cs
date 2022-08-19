@@ -1,8 +1,8 @@
 ﻿namespace Quiz
 {
-    public class OrangeBasket : IOrangeBasket
+    public class OrangeBasket 
     {
-        private readonly IDictionary<int, Orange> _oranges;
+        public readonly IDictionary<int, Orange> _oranges;
 
         public OrangeBasket()
         {
