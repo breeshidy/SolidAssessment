@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 namespace Quiz
 {
 
-    public class Lion : IAnimal, ILion
+    public class Lion : IAnimal
     {
         public string GetName() => nameof(Lion);
 
         public string GetHabitat() => "Wild";
-
-        public void TestLivKovWorks() => Console.WriteLine("Work");
     }
 }
