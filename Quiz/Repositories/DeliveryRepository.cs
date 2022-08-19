@@ -1,4 +1,4 @@
-﻿using Quiz.models;
+﻿using Quiz.Models;
 using Quiz.Services;
 
 namespace Quiz.Repositories

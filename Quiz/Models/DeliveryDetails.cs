@@ -1,4 +1,4 @@
-﻿namespace Quiz.models
+﻿namespace Quiz.Models
 {
     public class DeliveryDetails
     {
