@@ -14,6 +14,8 @@ namespace Quiz.Repositories
             //this BookRepository class should be able to do CRUD operations on the Books SQL table.
         }
 
+        //TODO: when method is called, use a try catch to ensure method is validated
+
         public void SaveBook(BookDto bookDto)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -84,7 +86,6 @@ namespace Quiz.Repositories
  
         }
 
-        //when method is called, use a try catch to ensure book is deleted 
         public void DeleteBook(int bookId)
         {
             using (var connection = new SqlConnection(_connectionString))
