@@ -1,6 +1,6 @@
 ﻿namespace Quiz
 {
-    public class Orange
+    public class Fruit
     {
         public int Id { get; set; }
 

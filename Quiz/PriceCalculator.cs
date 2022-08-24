@@ -1,15 +1,18 @@
-﻿namespace Quiz
+﻿using Quiz.Fruits;
+
+namespace Quiz
 {
-    internal class CostOfOranges : OrangeBasket
+    internal class PriceCalculator 
     {
         //What do you think about this method ?
         //Should this be a responsibility of this Basket Class ?
-        public double GetTotalCost()
+        public double GetTotalCost(IDictionary<int, Fruit> fruits)
         {
             double cost = 0;
-            foreach (var orange in _oranges)
+      
+            foreach (var fruit in fruits)
             {
-                cost += orange.Value.Cost;
+                cost += fruit.Value.Cost;
             }
 
             return cost;
