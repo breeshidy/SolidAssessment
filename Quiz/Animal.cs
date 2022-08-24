@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Quiz
 {
-
-    public class Lion : Animal
+    public class Animal
     {
-        public override string GetName() => nameof(Lion);
+        public virtual string GetName() => nameof(Animal);
 
-        public override string GetHabitat() => "Wild";
+        public virtual string GetHabitat() => "Habitat";
     }
 }

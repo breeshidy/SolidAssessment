@@ -1,9 +1,9 @@
 ﻿namespace Quiz
 {
-    public class Cat : IAnimal
+    public class Cat : Animal
     {
-        public string GetName() => nameof(Cat);
+        public override string GetName() => nameof(Cat);
 
-        public string GetHabitat() => "Home";
+        public override string GetHabitat() => "Home";
     }
 }

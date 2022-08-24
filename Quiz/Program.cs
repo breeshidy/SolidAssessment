@@ -1,6 +1,6 @@
 ﻿using Quiz;
 
-IAnimal animal = new Lion();
+Animal animal = new Lion();
 Console.WriteLine($"I am a {animal.GetName()} and I live in the {animal.GetHabitat()}.");
 
 animal = new Cat();
