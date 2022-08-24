@@ -14,7 +14,7 @@ namespace Quiz.Repositories
             //this BookRepository class should be able to do CRUD operations on the Books SQL table.
         }
 
-        public void SaveBookToBookTable(BookDto bookDto)
+        public void SaveBook(BookDto bookDto)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -32,8 +32,9 @@ namespace Quiz.Repositories
             }
         }
 
-        public void ReadBookFromBookTable()
+        public IList<BookDto> GetBooks()
         {
+            IList<BookDto> books = new List<BookDto>(); 
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
@@ -51,21 +52,18 @@ namespace Quiz.Repositories
                             var author = rd.GetString(2);
                             var publishedDate = rd.GetDateTime(3);
 
-                            //display retrieved record
-                            Console.WriteLine("{0},{1},{2},{3}", name, title, author, publishedDate);
+                            BookDto book = new BookDto() { Author = author, Title = title, PublishedDate = publishedDate };
+                            books.Add(book);
+
                         }
                     }
-                    else
-                    {
-                        Console.WriteLine("No data found.");
-                    }
                 }
+                return books;
             }
         }
 
-
-
-        public void UpdateBookInBookTable(BookDto bookDto, int bookID)
+        //log out message when id doesnt exist
+        public void UpdateBook(BookDto bookDto, int bookId)
         {
 
             using (var connection = new SqlConnection(_connectionString))
@@ -75,7 +73,7 @@ namespace Quiz.Repositories
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "UpdateBookDetails";
-                    cmd.Parameters.AddWithValue("@BookId", bookID);
+                    cmd.Parameters.AddWithValue("@BookId", bookId);
                     cmd.Parameters.AddWithValue("@Name", bookDto.Name);
                     cmd.Parameters.AddWithValue("@Title", bookDto.Title);
                     cmd.Parameters.AddWithValue("@Author", bookDto.Author);
@@ -86,9 +84,8 @@ namespace Quiz.Repositories
  
         }
 
-
-
-        public void DeleteBookInBookTable(int bookId)
+        //when method is called, use a try catch to ensure book is deleted 
+        public void DeleteBook(int bookId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -97,17 +94,8 @@ namespace Quiz.Repositories
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "DeleteBookDetails";
+                    cmd.Parameters.AddWithValue("@BookId", bookId);
                     int numRes = cmd.ExecuteNonQuery();
-                    if (numRes > 0)
-                    {
-                        Console.WriteLine("Record Deleted Successfully !!!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Please Try Again !!!");
-                    }
-
-
                 }
             }
         }

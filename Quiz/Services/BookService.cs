@@ -15,7 +15,6 @@ namespace Quiz.Services
 
         public Book Get(int id)
         {
-            _bookRepository.ReadBookFromBookTable();  
             return new Book();
         }
     }
