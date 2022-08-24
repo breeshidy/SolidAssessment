@@ -21,9 +21,7 @@ namespace Quiz.Repositories
 
             _deliveries.Add(deliveryDetails.Id, deliveryDetails);
 
-            //send email to customer about delivery
-            var emailToSend = new Email() { };
-            //some logic here to send Email
+            SendNotification sendNotification = new SendNotification();
         }
 
         public DeliveryDetails? Get(int deliveryId)
@@ -32,9 +30,7 @@ namespace Quiz.Repositories
 
             if (deliveryDetails != null)
             {
-                //send email to customer about delivery
-                var emailToSend = new Email() { };
-                //some logic here to send Email
+                SendNotification sendNotification = new SendNotification();
             }
 
             return deliveryDetails;
@@ -49,18 +45,15 @@ namespace Quiz.Repositories
 
             _deliveries[deliveryDetails.Id] = deliveryDetails;
 
-            //send email to customer about delivery
-            var emailToSend = new Email() { };
-            //some logic here to send Email
+            SendNotification sendNotification = new SendNotification();
         }
 
         public void Delete(int deliveryId)
         {
             _deliveries.Remove(deliveryId);
 
-            //send email to customer about delivery
-            var emailToSend = new Email() { };
-            //some logic here to send Email
+            SendNotification sendNotification = new SendNotification();
         }
+
     }
 }
