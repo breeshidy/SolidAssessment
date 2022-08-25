@@ -9,8 +9,9 @@ var bookRepo = new BookRepository();
 //bookRepo.UpdateBook(bookDto2, 6); 
 
 //bookRepo.GetBooks();
+Console.WriteLine(bookRepo.GetBook(2).Title);
 
-bookRepo.DeleteBook(6);
+//bookRepo.DeleteBook(6);
 
 //Using the bookService, Create, Read, Update and Delete Book Entries from your SQL Books Table.
 
