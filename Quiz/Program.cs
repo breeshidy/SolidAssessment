@@ -1,4 +1,4 @@
-﻿string taskToDo = "Open-Closed Principle Scenario:";
+string taskToDo = "Open-Closed Principle Scenario:";
 
 string extraText = "Your company currently deals with the sales of Oranges but you are wanting to expand your solution to cater for Apples & Bananas.";
 
